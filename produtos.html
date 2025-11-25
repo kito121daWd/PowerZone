@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerZone</title>
+  <link rel="stylesheet" href="produtos.css">
+  <link rel="website icon"type="png" href="./img/WhatsApp Image 2025-11-14 at 15.59.37.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="banner">
+      <img src="./img/WhatsApp Image 2025-11-14 at 15.59.37.jpeg" alt="logo" class="logo">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Produtos.html">Produtos</a></li>
+
+       <li><a href="#" id="btnLogin" data-no-transition="true" role="button">Login</a></li>
+         <li><a href="#" id="btnCarrinho" data-no-transition="true" role="button">🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+
+        <div class="carousel-item active">
+          <img src="./img/1.jpg" alt="SmoothPower 1">
+        </div>
+
+        <div class="carousel-item">
+          <img src="./img/2.jpg" alt="SmoothPower 2">
+        </div>
+
+        <div class="carousel-item">
+          <img src="./img/3.jpg" alt="SmoothPower 3">
+        </div>
+
+        <div class="carousel-item">
+          <img src="./img/4.jpg" alt="SmoothPower 4">
+        </div>
+
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <button class="arrow left">❮</button>
+      <button class="arrow right">❯</button>
+
+    </div>
+
+    <div class="produtos">
+      <h1 class="titulos">Compre Aqui</h1>
+      <ul>
+
+        <li>
+          <h1>SmoothPower</h1>
+          <img src="./img/produto2 (3).jpeg" alt="SmoothPower" class="img-produto">
+          <p>R$ 17.83</p>
+          <button class="addCart" data-nome="SmoothPower" data-preco="17.83">Adicionar</button>
+        </li>
+
+        <li>
+          <h1>IcePower</h1>
+          <img src="./img/produto2 (1).jpeg" alt="IcePower" class="img-produto">
+          <p>R$ 5.00 </p>
+          <button class="addCart" data-nome="IcePower" data-preco="5.00">Adicionar</button>
+        </li>
+
+        <li>
+          <h1>ProteinPower</h1>
+          <img src="./img/produto2 (2).png" alt="ProteinPower" class="img-produto">
+          <p>R$ 11.87 </p>
+          <button class="addCart" data-nome="ProteinPower" data-preco="11.87">Adicionar</button>
+        </li>
+
+        <li>
+          <h1>CrePower</h1>
+          <img src="./img/produto2 (4).jpeg" alt="CrePower" class="img-produto">
+          <p>R$ 34.90</p>
+          <button class="addCart" data-nome="CrePower" data-preco="34.90">Adicionar</button>
+        </li>
+
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- CARRINHO LATERAL -->
+  <aside id="carrinho">
+    <div class="carrinho-header">
+      <h2>Seu Carrinho</h2>
+      <button id="fecharCarrinho">X</button>
+    </div>
+
+    <ul id="listaCarrinho"></ul>
+
+    <div class="carrinho-total">
+      Total: R$ <span id="totalCarrinho">0.00</span>
+    </div>
+    <button id="btnComprar" class="comprar-btn">Finalizar Compra</button>
+
+  </aside>
+
+
+<footer class="footer">
+
+ <div class="left">
+
+  <h4 class="title-footer"> Power <span> Zone</span></h4>
+
+  <p class="links">
+   
+   <a href="index.html" title="Home">Home</a>
+   <a href="produtos.html" title="Html"> Produtos</a>
+   
+
+  </p>
+ 
+<div class="footer-icons">
+  <a href="https://www.instagram.com/pow3rzone?igsh=MTd3czNjbTdtcnAzcg==">
+    <img src="/img/instagram.png" alt="Instagram" class="icon-img">
+  </a>
+
+  <a href="">
+    <img src="img/whatsapp.png" alt="WhatsApp" class="icon-img">
+  </a>
+</div>
+
+
+
+
+
+
+
+
+                <p class="Copyright">Copyright &copy; 2025 PowerZone- Todos os Direitos Reservados.</p>
+
+
+ </div><!--Left-->
+
+ <div class="right">
+
+  <h4 class="title-footer"> Converse conosco </h4>
+
+  <form action="#" method="post">
+
+   <input type="text" name="nome" placeholder="Nome" required=""/>
+   <input type="email" name="email" placeholder="E-mail" required=""/>
+   <input type="text" name="assunto" placeholder="assunto" required=""/>
+   <textarea name="messagem" placeholder="Messagem" required=""></textarea>
+   <button class="btn">Enviar</button>
+
+  </form>
+
+ </div>
+
+</footer>
+<!-- LOGIN MODAL (GLASS EFFECT) -->
+<div id="loginModal" class="login-modal">
+    <div class="login-box glass">
+        <button id="fecharLogin" class="fechar-login">X</button>
+
+        <!-- LOGIN -->
+        <div id="loginArea">
+            <h2 class="titulo-login">Login</h2>
+
+            <input type="email" id="userLogin" placeholder="Email">
+            <input type="password" id="userSenha" placeholder="Senha">
+
+            <button id="entrarBtn" class="login-btn" type="button">Entrar</button>
+
+      <p class="alternar">
+                Não tem conta?  
+                <a id="abrirRegistrar" href="#" data-no-transition="true" role="button">Registrar</a>
+      </p>
+            <p id="loginErro" class="erro"></p>
+        </div>
+
+        <!-- REGISTRAR -->
+        <div id="registrarArea" style="display:none;">
+            <h2 class="titulo-login">Registrar</h2>
+
+            <input type="text" id="regNome" placeholder="Nome">
+            <input type="email" id="regEmail" placeholder="Email">
+            <input type="password" id="regSenha" placeholder="Senha">
+
+            <button id="registrarBtn" class="login-btn" type="button">Criar conta</button>
+
+      <p class="alternar">
+                Já tem conta?
+                <a id="abrirLogin" href="#" data-no-transition="true" role="button">Login</a>
+      </p>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

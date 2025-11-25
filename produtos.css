@@ -1,0 +1,906 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:#E9E8E6;
+}
+
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    background-color: #E9E8E6;
+}
+
+.banner {
+    font-size: 16px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+nav a:hover {
+    color: blue;
+}
+
+.logo {
+    width: 175px;
+}
+
+/* ========================= */
+/*      FUNDO DO SITE        */
+/* ========================= */
+
+main {
+    background: linear-gradient(180deg, #E9E8E6 0%, #1E4FB3 100%);
+}
+
+/* ========================= */
+/*  ÁREA DO CARROSSEL        */
+/* ========================= */
+
+.area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 650px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.carousel-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.carousel-item img {
+    max-width: 45%;
+    height: auto;
+    object-fit: contain;
+}
+
+.carousel-item .texto {
+    width: 50%;
+    padding: 20px;
+}
+
+/* Setas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 18px 22px;
+    cursor: pointer;
+    font-size: 35px;
+    border-radius: 50%;
+}
+
+.left { left: 25px; }
+.right { right: 25px; }
+
+/* Bolinhas */
+.carousel-dots {
+    position: absolute;
+    bottom: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: #cfcfcf;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #007bff;
+}
+
+/* ========================= */
+/*     BOTÃO CENTRAL         */
+/* ========================= */
+
+.btn {
+    display: block;
+    background: whitesmoke;
+    color: black;
+    padding: 15px 50px;
+    border-radius: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background:#ddd;
+}
+
+/* ========================= */
+/*       SEÇÃO PRODUTOS      */
+/* ========================= */
+
+.produtos {
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #1E4FB3 0%, #0A3A7E 100%);
+    text-align: center;
+}
+
+.produtos .titulos {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f5f5f5;
+    font-weight: 700;
+}
+
+.produtos ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+}
+
+.produtos ul li {
+    background: #FEFEFE;
+    width: 220px;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.produtos ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.30);
+}
+
+.produtos ul li h1 {
+    font-size: 1.4rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.img-produto {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.produtos ul li p {
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+}
+
+/* ========================= */
+/*         CARRINHO          */
+/* ========================= */
+
+#carrinho {
+    position: fixed;
+    right: -350px;
+    top: 20px;                /* deixa um espaço em cima (fica mais bonito) */
+    height: auto;             /* NÃO ocupa a tela inteira */
+    max-height: 85vh;         /* altura máxima */
+    width: 300px;
+    background: whitesmoke;
+    padding: 20px;
+    transition: 0.4s ease;
+    box-shadow: -3px 0 25px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    border-left: 4px solid #1E4FB3;
+    border-radius: 12px 0 0 12px; /* bordas arredondadas à esquerda */
+    overflow-y: auto;         /* scroll só quando precisar */
+}
+
+#carrinho.ativo {
+    right: 0;
+}
+
+.carrinho-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fecharCarrinho {
+    border: none;
+    background: #1E4FB3;
+    color: white;
+    font-size: 18px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#listaCarrinho {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#listaCarrinho li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    background: white;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #c40000;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.carrinho-total {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 2px solid #1E4FB3;
+    text-align: center;
+}
+
+.addCart {
+    background: #1E4FB3;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.addCart:hover {
+    background: #163d8a;
+}
+
+
+
+
+.footer{
+
+ background-color: black;
+ width: 100%;
+ height:100%;
+ float: left;
+ font-size: 18px;
+ padding: 50px 10px 50px 10px;
+
+}
+
+.footer .left{ 
+
+ width:100%; 
+ float:left; 
+ border-bottom:1px #222424 solid;
+ border-right:0; 
+ margin-bottom:20px; 
+    padding-bottom:20px;
+}
+
+.footer .title-footer {
+
+ color: #ffffff;
+ font-family: 'DM Sans', sans-serif;
+ font-weight: initial;
+    font-size:26px;
+    width:100%;
+    float:left;
+    margin-bottom:15px;
+
+}
+
+.footer .title-footer span{
+
+ color:  #2fcacf;
+ font-family:'DM Sans', sans-serif;
+ font-weight: bold;
+
+}
+
+/* Footer links */
+
+.footer .links{
+ 
+ width: 100%;
+ float: left;
+ color:  #ffffff;
+ margin-bottom: 20px;
+ padding: 0;
+
+}
+
+.footer .links a{
+
+    display: block;
+    line-height: 33px;
+    text-decoration: none;
+    color: #fff;
+    font-family:'DM Sans', sans-serif;
+    font-size:16px;
+    transition:0.3s;
+
+
+}
+
+.footer .links a:hover { color:#2fcacf; }
+
+.footer .Copyright{
+
+ font-family:'DM Sans', sans-serif;
+ color:  #8f9296;
+ font-size: 14px;
+ font-weight: normal;
+ margin-bottom: 10px;
+
+}
+
+/*Rede Sociais*/
+
+.footer .footer-icons{
+ 
+ width:100%;
+ float:left;
+ margin-bottom:20px;
+}
+
+.footer .footer-icons a{
+
+ display: inline-block;
+ width: 35px;
+ height: 35px;
+ cursor: pointer;
+ background-color:  b;
+ border-radius: 50px;
+    font-family:'DM Sans', sans-serif;
+ font-size: 20px;
+ color: #ffffff;
+ text-align: center; 
+ line-height: 35px;
+ margin-bottom: 5px;
+ transition:0.3s;
+
+}
+
+.footer .footer-icons a:hover{ background-color:#2fcacf; }
+
+/*Right*/
+
+.footer .right   { width:100%; float:left; }
+.footer .right p {
+
+ font-family: 'DM Sans', sans-serif;
+ font-weight: initial;
+ display: inline-block;
+ vertical-align: top;
+ font-size: 30px;
+ color: #ffffff;
+
+}
+
+/*formulario*/
+
+.footer form { width:100%; float:left; }
+
+.footer form input,
+.footer form textarea{
+
+ display: block;
+ border-radius: 3px;
+ box-sizing: border-box;
+ background-color:  #1f2022;
+ box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+ border: none;
+ resize: none;
+    outline: none;
+ font: inherit;
+ font-size: 14px;
+ font-family:'DM Sans', sans-serif;
+ font-weight: normal;
+ color:  #d1d2d2;
+ width: 100%;
+ padding: 18px;
+
+}
+
+
+
+
+ /* Rodapé */
+
+.footer{
+ background: linear-gradient(to bottom, #0A3A7E , black 50%);
+ width: 100%;
+ height:100%;
+ float: left;
+ font-size: 18px;
+ padding: 50px 10px 50px 10px;
+}
+
+
+/* deixa TODOS os textos brancos */
+.footer,
+.footer * {
+    color: white !important;
+}
+
+.footer .left{ 
+ width:100%; 
+ float:left; 
+ border-bottom:1px rgba(255,255,255,0.2) solid;
+ border-right:0; 
+ margin-bottom:20px; 
+ padding-bottom:20px;
+}
+
+.footer .title-footer {
+ font-family: 'DM Sans', sans-serif;
+ font-weight: initial;
+ font-size:26px;
+ width:100%;
+ float:left;
+ margin-bottom:15px;
+}
+
+.footer .title-footer span{
+ font-family:'DM Sans', sans-serif;
+ font-weight: bold;
+}
+
+/* Footer links */
+
+.footer .links{
+ width: 100%;
+ float: left;
+ margin-bottom: 20px;
+ padding: 0;
+}
+
+.footer .links a{
+ display: block;
+ line-height: 33px;
+ text-decoration: none;
+ font-family:'DM Sans', sans-serif;
+ font-size:16px;
+ transition:0.3s;
+}
+
+.footer .links a:hover { 
+    color:#ffffff !important; 
+}
+
+.footer .Copyright{
+ font-family:'DM Sans', sans-serif;
+ font-size: 14px;
+ font-weight: normal;
+ margin-bottom: 10px;
+}
+
+/*Rede Sociais*/
+
+.footer .footer-icons{
+ width:100%;
+ float:left;
+ margin-bottom:20px;
+}
+
+.footer .footer-icons a{
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ width: 35px;
+ height: 35px;
+ background-color: transparent;
+ border-radius: 50%;
+ margin-right: 8px;
+ transition: 0.3s;
+}
+
+.footer .footer-icons a:hover{
+ background-color:#2fcacf;
+}
+
+.footer .footer-icons .icon-img {
+ width: 20px;
+ height: 20px;
+ object-fit: contain;
+ filter: brightness(0) invert(1);
+ transition: 0.3s;
+}
+
+.footer .footer-icons a:hover .icon-img {
+ filter: none;
+}
+
+/*Right*/
+
+.footer .right { width:100%; float:left; }
+.footer .right p {
+ font-family: 'DM Sans', sans-serif;
+ font-weight: initial;
+ display: inline-block;
+ vertical-align: top;
+ font-size: 30px;
+}
+
+/*Formulário*/
+
+.footer form { width:100%; float:left; }
+
+.footer form input,
+.footer form textarea{
+ display: block;
+ border-radius: 3px;
+ box-sizing: border-box;
+ background-color: rgba(0,0,0,0.3); /* mantém tom escuro */
+ border: none;
+ resize: none;
+ outline: none;
+ font-size: 14px;
+ font-family:'DM Sans', sans-serif;
+ width: 100%;
+ padding: 18px;
+}
+
+.footer form input{
+ height: 55px;
+ margin-bottom: 15px;
+}
+
+.footer form textarea{
+ height: 100px;
+ margin-bottom: 20px;
+}
+
+.footer form .btn{
+ border-radius: 3px;
+ background-color: rgba(216, 199, 199, 0.4);
+ border: 0;
+ padding: 15px 50px;
+ font-family: 'DM Sans', sans-serif;
+ font-weight: bold;
+ cursor: pointer;
+ transition: 0.3s;
+}
+
+.footer form .btn:hover { 
+    background-color: #4300be !important; 
+}
+
+/*Responsive*/
+@media (min-width: 1280px) {
+ .footer { padding: 100px 50px 50px 100px; }
+ .footer .Copyright { font-size: 16px; }
+ .footer form input,
+ .footer form textarea { width: 100%; float:left; }
+ .footer form button { padding: 10px 35px; }
+}
+
+@media (min-width: 768px) {
+ .footer .left { width:48%; border-bottom:0; }
+ .footer .right { width:48%; padding-left: 4%; border-left: 1px rgba(255,255,255,0.2) solid; } 
+ .footer form { margin-top: 30px; display: block; }
+ .footer form button { float: none; }
+}
+/* ================================
+   MODAL LOGIN - GLASS EFFECT
+================================ */
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.login-box.glass {
+    /* Use flex-based centering: .login-modal provides the centering, keep the box positioned normally */
+    width: 360px;
+    max-width: calc(100% - 40px);
+    padding: 30px 28px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+    position: relative;
+    text-align: center;
+    z-index: 100000; /* ensure it's above the overlay */
+    max-height: 90vh; /* keep the box within viewport */
+    overflow: auto; /* allow scrolling if content is tall (e.g., on mobile keyboard) */
+}
+.login-modal.ativo {
+    display: flex !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.6);
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: #1E4FB3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #143f94;
+}
+
+.fechar-login {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.alternar {
+    margin-top: 12px;
+    color: white;
+    font-size: 15px;
+}
+
+.alternar a {
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.titulo-login {
+    color: white;
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.erro {
+    color: #ff4141;
+    margin-top: 8px;
+}
+
+
+/* === BOTÃO COMPRAR === */
+.comprar-btn {
+    width: 100%;
+    padding: 15px;
+    background: green;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comprar-btn:hover {
+    background: #0a7d0a;
+}
+/* === ANIMAÇÃO DE TRANSIÇÃO ENTRE PÁGINAS === */
+.page-transition {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.page-transition.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* ========================= */
+/*       RESPONSIVO 480PX    */
+/* ========================= */
+@media (max-width: 480px) {
+
+    /* HEADER */
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    /* CARROSSEL */
+    .carousel-container {
+        max-height: 350px;
+        border-radius: 12px;
+    }
+
+    .carousel-item {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .carousel-item img {
+        max-width: 90%;
+    }
+
+    .arrow {
+        padding: 10px 14px;
+        font-size: 22px;
+        top: 45%;
+    }
+
+    /* PRODUTOS */
+    .produtos {
+        padding: 20px 10px;
+    }
+
+    .produtos ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .produtos ul li {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .img-produto {
+        height: 150px;
+    }
+
+    /* CARRINHO */
+    #carrinho {
+        width: 90%;
+        right: -100%;
+        top: 10px;
+        max-height: 80vh;
+    }
+
+    #carrinho.ativo {
+        right: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .footer .left,
+    .footer .right {
+        width: 100%;
+        float: none;
+        border: none;
+        padding: 0;
+    }
+
+    .footer-icons {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+    }
+
+    /* FORMULARIO FOOTER */
+    .footer form {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* LOGIN MODAL */
+    .login-box {
+        width: 90%;
+    }
+
+    .titulo-login {
+        font-size: 26px;
+    }
+}
+
+
